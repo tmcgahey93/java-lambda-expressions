@@ -21,8 +21,6 @@ public class Lambdas {
         // Apply transformation inside forEach
         names.forEach(name -> System.out.println("Hello, " + toUpper.transform(name)));
 
-        //names.forEach(name -> System.out.println("Hello, " + name));
-
         // Using a lambda to create a thread
         new Thread(() -> System.out.println("Running in a thread")).start();
 

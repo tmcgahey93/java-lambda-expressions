@@ -24,7 +24,7 @@ public class Lambdas {
         // Using a lambda to create a thread
         new Thread(() -> System.out.println("Running in a thread")).start();
 
-        ArrayList<Integer> myList = new ArrayList<>();
+        List<Integer> myList = new ArrayList<>();
         myList.add(7);
         myList.add(35);
         myList.add(14);

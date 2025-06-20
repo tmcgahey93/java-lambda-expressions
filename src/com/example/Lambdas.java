@@ -68,7 +68,12 @@ public class Lambdas {
         List<Transaction> transactionList = new ArrayList<>();
         transactionList.add(transaction);
 
-        System.out.print("Transaction List: " + transactionList);
+        //System.out.print("Transaction List: " + transactionList);
+
+        Stream<Transaction> transactionValues = transactionList.stream();
+        transactionValues.forEach((n) -> System.out.print(n + " "));
+
+        System.out.println();
 
     }
 }

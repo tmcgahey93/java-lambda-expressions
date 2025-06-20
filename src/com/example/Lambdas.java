@@ -65,6 +65,10 @@ public class Lambdas {
         transaction.setAmount(100.00);
         transaction.setIsFraud(false);
         
+        List<Transaction> transactionList = new ArrayList<>();
+        transactionList.add(transaction);
+
+        System.out.print("Transaction List: " + transactionList);
 
     }
 }

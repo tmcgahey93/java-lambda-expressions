@@ -1,11 +1,11 @@
 package com.example;
 
-public class Transaction {
+public class Transaction implements Comparable<Transaction>{
     private String transactionId;
     private Double transactionAmount;
     private Boolean isFraud;
 
-    void Transaction () {
+    public Transaction() {
         this.transactionId = " ";
         this.transactionAmount = 0.00;
         this.isFraud = false;
@@ -34,4 +34,25 @@ public class Transaction {
     Boolean getIsFraud() {
         return this.isFraud;
     }
+
+    @Override
+    public int compareTo(Transaction t) {
+        int idCompare = this.transactionId.compareTo(t.transactionId);
+        if(idCompare != 0) {
+            return idCompare;
+        }
+
+        int amountCompare = this.transactionAmount.compareTo(t.transactionAmount);
+        if(amountCompare != 0) {
+            return amountCompare;
+        }
+
+        return this.isFraud.compareTo(t.isFraud);
+    }
+
+    @Override
+    public String toString() {
+        return "Transaction{transactionId='" + transactionId + '\'' +
+                ", transactionAmount=" + transactionAmount + ", isFraud=" + isFraud +'}';
+}
 }

@@ -59,5 +59,12 @@ public class Lambdas {
 
         System.out.println();
 
+        Transaction transaction = new Transaction();
+
+        transaction.setTransactionId("abc123");
+        transaction.setAmount(100.00);
+        transaction.setIsFraud(false);
+        
+
     }
 }

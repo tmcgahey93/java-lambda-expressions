@@ -7,7 +7,7 @@ import java.util.*;
 
 @FunctionalInterface
 interface StringTransformer {
-    String transform(String input);
+   String transform(String input);
 }
 
 public class Lambdas {

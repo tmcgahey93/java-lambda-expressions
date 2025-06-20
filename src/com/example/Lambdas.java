@@ -38,7 +38,28 @@ public class Lambdas {
         myList.add(63);
 
         Stream<Integer> printStream = myList.stream();
-
+        System.out.print("All Values: ");
         printStream.forEach((n) -> System.out.print(n + " "));
+
+        System.out.println();
+
+        Stream<Integer> sortedStream = myList.stream().sorted();
+        System.out.print("Sorted Values: ");
+        sortedStream.forEach((n) -> System.out.print(n + " "));
+
+        System.out.println();
+
+        Stream<Integer> oddValues = myList.stream().sorted().filter((n) -> (n % 2) == 1);
+        System.out.print("Odd Values: ");
+        oddValues.forEach((n) -> System.out.print(n + " "));
+
+        System.out.println();
+
+        Stream<Integer> evenValues = myList.stream().sorted().filter((n) -> (n % 2) == 0);
+        System.out.print("Even Values: ");
+        evenValues.forEach((n) -> System.out.print(n + " "));
+
+        System.out.println();
+
     }
 }

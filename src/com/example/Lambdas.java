@@ -59,14 +59,9 @@ public class Lambdas {
 
         System.out.println();
 
-        Transaction transaction = new Transaction();
-
-        transaction.setTransactionId("abc123");
-        transaction.setAmount(100.00);
-        transaction.setIsFraud(false);
-        
         List<Transaction> transactionList = new ArrayList<>();
-        transactionList.add(transaction);
+
+        transactionList = TransactionReader.readTransactionsFromFile();
 
         //System.out.print("Transaction List: " + transactionList);
 

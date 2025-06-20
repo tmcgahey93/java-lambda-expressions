@@ -5,33 +5,30 @@ public class Transaction implements Comparable<Transaction>{
     private Double transactionAmount;
     private Boolean isFraud;
 
-    public Transaction() {
-        this.transactionId = " ";
-        this.transactionAmount = 0.00;
-        this.isFraud = false;
-    }
+    // No-arg constructor (required for Jackson)
+    public Transaction() {}
 
-    void setTransactionId(String t) {
+    public void setTransactionId(String t) {
         this.transactionId = t;
     }
 
-    void setAmount(Double a) {
+    public void setAmount(Double a) {
         this.transactionAmount = a;
     }
 
-    void setIsFraud(Boolean f) {
+    public void setIsFraud(Boolean f) {
         this.isFraud = f;
     }
 
-    String getTransactionId() {
+    public String getTransactionId() {
         return this.transactionId;
     }
 
-    Double getTransactionAmount() {
+    public Double getTransactionAmount() {
         return this.transactionAmount;
     }
 
-    Boolean getIsFraud() {
+    public Boolean getIsFraud() {
         return this.isFraud;
     }
 

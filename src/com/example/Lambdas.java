@@ -66,7 +66,7 @@ public class Lambdas {
         //System.out.print("Transaction List: " + transactionList);
 
         Stream<Transaction> transactionValues = transactionList.stream();
-        transactionValues.forEach((n) -> System.out.print(n + " "));
+        transactionValues.forEach((n) -> System.out.println(n));
 
         System.out.println();
 

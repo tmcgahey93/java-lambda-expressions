@@ -49,7 +49,8 @@ public class Transaction implements Comparable<Transaction>{
 
     @Override
     public String toString() {
-        return "Transaction{transactionId='" + transactionId + '\'' +
-                ", transactionAmount=" + transactionAmount + ", isFraud=" + isFraud +'}';
+        return String.format("Transaction ID: %-8s | Amount: $%-8.2f | Fraudulent: %-5s", 
+        transactionId, transactionAmount, isFraud ? "YES" : "NO"
+    );
 }
 }

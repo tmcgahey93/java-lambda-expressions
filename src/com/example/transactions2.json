@@ -48,5 +48,10 @@
       "transactionId": "txn010",
       "transactionAmount": 77.70,
       "isFraud": false
+    },
+    {
+      "transactionId": "txn012",
+      "transactionAmount": 83.90,
+      "isFraud": false
     }
   ]

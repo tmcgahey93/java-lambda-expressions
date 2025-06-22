@@ -55,8 +55,8 @@ public class Transaction implements Comparable<Transaction>{
         transactionId, transactionAmount, isFraud ? "YES" : "NO");
     }
 
-    @Override
-    public boolean equals(Object o) {
+   @Override
+   public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Transaction)) return false;
 

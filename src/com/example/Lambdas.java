@@ -20,7 +20,7 @@ public class Lambdas {
         names.forEach(name -> System.out.println("Hello, " + toUpper.transform(name)));
 
         // Using a lambda to create a thread
-        new Thread(() -> System.out.println("Running in a thread")).start();
+        //new Thread(() -> System.out.println("Running in a thread")).start();
 
         List<Integer> myList = new ArrayList<>();
         myList.add(7);
@@ -66,22 +66,35 @@ public class Lambdas {
         Stream<Transaction> transactionValuesOne = transactionListOne.stream();
         transactionValuesOne.forEach((n) -> System.out.println(n));
 
-        //List<Transaction> transactionListTwo = new ArrayList<>();
-
-        final List<Transaction> transactionListTwo = TransactionReader.readTransactionsFromFile("transactions2.json");
+        List<Transaction> transactionListTwo = TransactionReader.readTransactionsFromFile("transactions2.json");
 
         System.out.println("Transaction File Two");
 
         Stream<Transaction> transactionsValuesTwo = transactionListTwo.stream();
         transactionsValuesTwo.forEach((n) -> System.out.println(n));
 
-        List<Transaction> onlyInList1 = transactionListOne.stream()
-        .filter(e -> !transactionListTwo.contains(e))
-        .collect(Collectors.toList());
+        //List<Transaction> onlyInList1 = transactionListOne.stream()
+        //.filter(e -> !transactionListTwo.contains(e))
+        //.collect(Collectors.toList());
 
-        System.out.println("In list 1 AND not in list 2");
+        Set<Transaction> setOne = new HashSet<>(transactionListOne);
+        Set<Transaction> setTwo = new HashSet<>(transactionListTwo);
 
-        onlyInList1.forEach((n) -> System.out.println(n));
+        Set<Transaction> onlyInOne = setOne.stream()
+            .filter(e -> !setTwo.contains(e))
+            .collect(Collectors.toSet());
+
+        System.out.println("Only in One:");
+
+        onlyInOne.forEach((n) -> System.out.println(n));
+
+        Set<Transaction> onlyInTwo = setTwo.stream()
+            .filter(e -> !setOne.contains(e))
+            .collect(Collectors.toSet());
+
+        System.out.println("Only in Two:");
+
+        onlyInTwo.forEach((n) -> System.out.println(n));
 
     }
 }

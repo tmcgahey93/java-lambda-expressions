@@ -1,0 +1,57 @@
+[
+    {
+      "transactionId": "txn001",
+      "transactionAmount": 125.50,
+      "isFraud": false
+    },
+    {
+      "transactionId": "txn002",
+      "transactionAmount": 320.00,
+      "isFraud": true
+    },
+    {
+      "transactionId": "txn003",
+      "transactionAmount": 89.99,
+      "isFraud": false
+    },
+    {
+      "transactionId": "txn004",
+      "transactionAmount": 450.25,
+      "isFraud": false
+    },
+    {
+      "transactionId": "txn005",
+      "transactionAmount": 10.00,
+      "isFraud": true
+    },
+    {
+      "transactionId": "txn006",
+      "transactionAmount": 999.99,
+      "isFraud": false
+    },
+    {
+      "transactionId": "txn007",
+      "transactionAmount": 12.75,
+      "isFraud": true
+    },
+    {
+      "transactionId": "txn008",
+      "transactionAmount": 185.00,
+      "isFraud": false
+    },
+    {
+      "transactionId": "txn009",
+      "transactionAmount": 215.80,
+      "isFraud": true
+    },
+    {
+      "transactionId": "txn010",
+      "transactionAmount": 77.70,
+      "isFraud": false
+    },
+    {
+      "transactionId": "txn011",
+      "transactionAmount": 98.10,
+      "isFraud": false
+    }
+  ]

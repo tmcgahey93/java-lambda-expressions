@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.Objects;
+
 public class Transaction implements Comparable<Transaction>{
     private String transactionId;
     private Double transactionAmount;
@@ -50,7 +52,21 @@ public class Transaction implements Comparable<Transaction>{
     @Override
     public String toString() {
         return String.format("Transaction ID: %-8s | Amount: $%-8.2f | Fraudulent: %-5s", 
-        transactionId, transactionAmount, isFraud ? "YES" : "NO"
-    );
-}
+        transactionId, transactionAmount, isFraud ? "YES" : "NO");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Transaction)) return false;
+
+        Transaction t = (Transaction) o;
+        return Objects.equals(transactionId, t.transactionId);
+    }
+
+    @Override
+    public int hashCode() {
+        //return Objects.hash(transactionId, transactionAmount, isFraud);
+        return Objects.hash(transactionId);
+    }
 }

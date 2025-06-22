@@ -66,9 +66,9 @@ public class Lambdas {
         Stream<Transaction> transactionValuesOne = transactionListOne.stream();
         transactionValuesOne.forEach((n) -> System.out.println(n));
 
-        List<Transaction> transactionListTwo = new ArrayList<>();
+        //List<Transaction> transactionListTwo = new ArrayList<>();
 
-        transactionListTwo = TransactionReader.readTransactionsFromFile("transactions2.json");
+        final List<Transaction> transactionListTwo = TransactionReader.readTransactionsFromFile("transactions2.json");
 
         System.out.println("Transaction File Two");
 

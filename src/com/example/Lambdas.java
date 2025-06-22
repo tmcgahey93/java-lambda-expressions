@@ -1,7 +1,5 @@
 package com.example;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.stream.*;
 import java.util.*;
 
@@ -77,9 +75,13 @@ public class Lambdas {
         Stream<Transaction> transactionsValuesTwo = transactionListTwo.stream();
         transactionsValuesTwo.forEach((n) -> System.out.println(n));
 
+        List<Transaction> onlyInList1 = transactionListOne.stream()
+        .filter(e -> !transactionListTwo.contains(e))
+        .collect(Collectors.toList());
 
+        System.out.println("In list 1 AND not in list 2");
 
-        
+        onlyInList1.forEach((n) -> System.out.println(n));
 
     }
 }

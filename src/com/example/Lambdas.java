@@ -14,13 +14,15 @@ public class Lambdas {
         // Reusable lambda expression
         StringTransformer toUpper = s -> s.toUpperCase();
 
-        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+        //List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+
+        List<String> names = new ArrayList<>();
+        names.add("Alice");
+        names.add("Bob");
+        names.add("Charlie");
 
         // Apply transformation inside forEach
         names.forEach(name -> System.out.println("Hello, " + toUpper.transform(name)));
-
-        // Using a lambda to create a thread
-        //new Thread(() -> System.out.println("Running in a thread")).start();
 
         List<Integer> myList = new ArrayList<>();
         myList.add(7);
@@ -72,10 +74,6 @@ public class Lambdas {
 
         Stream<Transaction> transactionsValuesTwo = transactionListTwo.stream();
         transactionsValuesTwo.forEach((n) -> System.out.println(n));
-
-        //List<Transaction> onlyInList1 = transactionListOne.stream()
-        //.filter(e -> !transactionListTwo.contains(e))
-        //.collect(Collectors.toList());
 
         Set<Transaction> setOne = new HashSet<>(transactionListOne);
         Set<Transaction> setTwo = new HashSet<>(transactionListTwo);

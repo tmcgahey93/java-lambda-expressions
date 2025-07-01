@@ -2,6 +2,7 @@ package com.example;
 
 import java.util.stream.*;
 import java.util.*;
+import com.fasterxml.jackson.core.type.TypeReference;
 
 @FunctionalInterface
 interface StringTransformer {
@@ -59,24 +60,29 @@ public class Lambdas {
 
         System.out.println();
 
-        List<Transaction> transactionListOne = new ArrayList<>();
-
-        transactionListOne = TransactionReader.readTransactionsFromFile("transactions1.json");
+        List<Transaction> transactionValuesOne = TransactionReader.readTransactionsFromFile(
+            "src/com/example/transactions1.json",
+            new TypeReference<List<Transaction>>() {}
+        );
 
         System.out.println("Transactions File One");
 
-        Stream<Transaction> transactionValuesOne = transactionListOne.stream();
-        transactionValuesOne.forEach((n) -> System.out.println(n));
+        Stream<Transaction> transactionsStreamOne = transactionValuesOne.stream();
+        transactionsStreamOne.forEach((n) -> System.out.println(n));
 
-        List<Transaction> transactionListTwo = TransactionReader.readTransactionsFromFile("transactions2.json");
+
+        List<Transaction> transactionValuesTwo = TransactionReader.readTransactionsFromFile(
+            "src/com/example/transactions2.json",
+            new TypeReference<List<Transaction>>() {}
+        );
 
         System.out.println("Transaction File Two");
 
-        Stream<Transaction> transactionsValuesTwo = transactionListTwo.stream();
-        transactionsValuesTwo.forEach((n) -> System.out.println(n));
+        Stream<Transaction> transactionsStreamTwo = transactionValuesTwo.stream();
+        transactionsStreamTwo.forEach((n) -> System.out.println(n));
 
-        Set<Transaction> setOne = new HashSet<>(transactionListOne);
-        Set<Transaction> setTwo = new HashSet<>(transactionListTwo);
+        Set<Transaction> setOne = new HashSet<>(transactionValuesOne);
+        Set<Transaction> setTwo = new HashSet<>(transactionValuesTwo);
 
         Set<Transaction> onlyInOne = setOne.stream()
             .filter(e -> !setTwo.contains(e))
